@@ -1,0 +1,13 @@
+{
+  "name": "printstream-import-extension",
+  "version": "0.1.0",
+  "private": true,
+  "description": "PrintStream browser import helper (Chrome MV3 extension).",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "build": "node scripts/build-remote-import-helper.mjs",
+    "pack": "node scripts/build-remote-import-helper.mjs"
+  },
+  "license": "UNLICENSED"
+}

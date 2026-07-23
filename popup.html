@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>PrintStream Remote Import</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body {
+        width: 280px;
+        margin: 0;
+        padding: 14px;
+        font: 14px/1.4 system-ui, sans-serif;
+        background: #070b14;
+        color: #fff;
+      }
+      button {
+        width: 100%;
+        padding: 10px 12px;
+        border: 0;
+        border-radius: 8px;
+        background: #1cab84;
+        color: #fff;
+        font: 600 14px system-ui, sans-serif;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      button:hover {
+        background: #14886a;
+      }
+      .secondary-button {
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+        padding: 8px 12px;
+        border: 1px solid #3b4d66;
+        border-radius: 8px;
+        background: #243043;
+        color: #fff;
+        font: 600 13px system-ui, sans-serif;
+        text-align: center;
+        text-decoration: none;
+        box-sizing: border-box;
+        transition: background 0.2s, border-color 0.2s;
+      }
+      .secondary-button:hover {
+        background: #3b4d66;
+        border-color: #506077;
+        text-decoration: none;
+      }
+      p {
+        margin: 10px 0 0;
+        color: #d1dbe5;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="open-import" type="button">Open in PrintStream</button>
+    <a href="options.html" class="secondary-button" target="_blank" rel="noreferrer">Options</a>
+    <p id="status" aria-live="polite"></p>
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+{
+  "manifest_version": 3,
+  "name": "PrintStream Remote Import Helper",
+  "version": "0.1.0",
+  "description": "Finds supported provider download links and opens PrintStream import with the provider page and selected file candidate.",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://makerworld.com/*",
+    "https://*.makerworld.com/*",
+    "https://makerworld.bblmw.com/*",
+    "https://*.printables.com/*",
+    "https://www.printables.com/*",
+    "https://printables.com/*"
+  ],
+  "optional_host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "content-click.js",
+        "content-state.js",
+        "extension-context.js",
+        "handoff.js",
+        "makerworld-page.js",
+        "page-binding.js",
+        "printables-download-guard.js",
+        "printables-modal.js",
+        "provider-candidates.js",
+        "printables-interceptor.js"
+      ],
+      "matches": [
+        "https://makerworld.com/*",
+        "https://*.makerworld.com/*",
+        "https://makerworld.bblmw.com/*",
+        "https://*.printables.com/*",
+        "https://www.printables.com/*",
+        "https://printables.com/*"
+      ]
+    }
+  ],
+  "action": {
+    "default_title": "Print to PrintStream",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://makerworld.com/*",
+        "https://*.makerworld.com/*",
+        "http://*/*",
+        "https://*/*",
+        "https://*.printables.com/*",
+        "https://www.printables.com/*",
+        "https://printables.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

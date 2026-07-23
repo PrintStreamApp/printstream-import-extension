@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>PrintStream Remote Import Helper</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body {
+        margin: 24px;
+        font: 14px/1.5 system-ui, sans-serif;
+        background: #070b14;
+        color: #fff;
+      }
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #d1dbe5;
+      }
+      input {
+        width: min(560px, 100%);
+        padding: 10px 12px;
+        background: rgba(19, 27, 42, 0.5);
+        border: 1px solid #304159;
+        border-radius: 8px;
+        color: #fff;
+        font: inherit;
+      }
+      input:focus {
+        outline: none;
+        border-color: #1cab84;
+      }
+      select {
+        width: min(586px, 100%);
+        padding: 10px 12px;
+        background: rgba(19, 27, 42, 0.5);
+        border: 1px solid #304159;
+        border-radius: 8px;
+        color: #fff;
+        font: inherit;
+      }
+      select:focus {
+        outline: none;
+        border-color: #1cab84;
+      }
+      button {
+        margin-top: 12px;
+        margin-right: 8px;
+        padding: 10px 14px;
+        border: 0;
+        border-radius: 8px;
+        background: #1cab84;
+        color: #fff;
+        font: inherit;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      button:hover {
+        background: #14886a;
+      }
+      button.secondary {
+        background: #263449;
+      }
+      button.secondary:hover {
+        background: #33445e;
+      }
+      button[hidden] {
+        display: none;
+      }
+      p {
+        max-width: 640px;
+        color: #d1dbe5;
+      }
+      code {
+        color: #33d7a6;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>PrintStream Remote Import Helper</h1>
+    <p>
+      Set the PrintStream web origin first. Once the URL is valid, the helper will discover the workspaces
+      your current PrintStream session can import into and let you choose from that list.
+    </p>
+    <label for="base-url">PrintStream base URL</label>
+    <input id="base-url" type="url" placeholder="http://localhost:5173">
+    <label for="tenant-select">Available workspaces</label>
+    <select id="tenant-select" disabled>
+      <option value="">Find workspaces to populate this list</option>
+    </select>
+    <p>
+      Import route: <code id="import-url-preview">Enter a valid PrintStream URL to load workspaces</code>
+    </p>
+    <div>
+      <button id="save" type="button">Save</button>
+      <button id="refresh-workspaces" class="secondary" type="button" disabled>Find workspaces</button>
+      <button id="open-sign-in" class="secondary" type="button" hidden>Login to PrintStream first</button>
+    </div>
+    <p id="status" aria-live="polite"></p>
+    <script src="options.js"></script>
+  </body>
+</html>
